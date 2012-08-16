@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ 
+<head> 
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+	<title>Login</title> 
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <%= stylesheet_link_tag    "application","comman",'login' %>
+	   </head> 
+ 
+<body> 
+
+<div id="login">
+		<div id="login_panel">
+		<%= form_tag :action=>'create' do %>	
+			<div class="login_fields">
+				<div class="field">
+					<label for="">User Name</label>
+					<input type="text" name="" value="" id="" tabindex="1"  placeholder="user name" />		
+				</div>
+				
+				<div class="field">
+					<label for="password">Password</label>
+					<input type="password" name="" value="" id="" tabindex="2" placeholder="password" />			
+				</div>
+			</div> 
+			
+			<div class="login_actions">
+				<button type="submit" class="btn btn-orange" tabindex="3">Login</button>
+			</div>
+		<% end %>
+	</div> 		
+</div> 
+
+</body> 
+ 
+</html>
