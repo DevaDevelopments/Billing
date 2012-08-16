@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813111315) do
+ActiveRecord::Schema.define(:version => 20120816102217) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,23 @@ ActiveRecord::Schema.define(:version => 20120813111315) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.boolean  "is_admin",        :default => false
+    t.integer  "city_id"
+    t.string   "address"
+    t.boolean  "status",          :default => false
+    t.string   "hashed_password"
+    t.string   "email"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
 end

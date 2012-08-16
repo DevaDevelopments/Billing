@@ -26,16 +26,16 @@
 		   	</tr>
 			<tr>
 		   		<td>Confirm password</td>
-				<td><%= text_field "user","password_confirmation"%></td>
+				<td><%= text_field "user","confirm_password"%></td>
 				<td> Is Admin</td>
 				<td><%= check_box "user", "is_admin" %></td>
 		   	</tr>
 			
 			<tr>
 		   		<td>Email</td>
-				<td><%= text_field "user","email"%></td>
+				<td><%= text_field "user",":email"%></td>
 				<td>Confirm Email</td>
-				<td><%= text_field "user","email_confirmation"%></td>
+				<td><%= text_field "user","confirm_email"%></td>
 		   	</tr>
 			<tr>
 			</tr>	

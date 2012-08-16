@@ -17,6 +17,7 @@ Billing::Application.routes.draw do
        collection do
           get 'login'
           get 'menu'
+#          post 'index'
        end
      end
 
