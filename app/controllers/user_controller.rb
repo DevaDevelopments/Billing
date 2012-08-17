@@ -3,6 +3,7 @@ class UserController < ApplicationController
   respond_to :html, :xml, :json
   
   def index
+    @user = User.all
   end
   
   def new
@@ -17,7 +18,7 @@ class UserController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+      @user = User.new(params[:user])
          if @user.save
            redirect_to(user_index_path(@user), :status=> :found, :notice => "New User created sucessfully") 
          else
