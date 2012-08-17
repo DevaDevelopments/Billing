@@ -17,9 +17,10 @@
 						<% s_no = 0%>
                        <% @user.each do |user|%>
 					     <% s_no += 1%>
-					     <tr>
+					     <tr class="<%= cycle("odd gradeX", "even gradeC") %>">
 					     	<td><%= s_no %></td>
 					     	<td><%= user.name%></td>
+							<td><%= user.email%></td>
 							<td><%= link_to 'Remove User', user, :confirm => 'Are you sure?', :method => :delete %></td>
 							<td><%= link_to 'Edit User', edit_user_path(user) %></td>
 					     </tr>
