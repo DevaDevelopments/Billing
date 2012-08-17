@@ -13,13 +13,11 @@ Billing::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
 
 #   Sample resource route with options:
-     resources :user ,:except=>'show' do
+     resources :user ,:except=>"show" do
        collection do
-          get 'login'
-          get 'menu'
-#          post 'index'
+         post :update
        end
-     end
+    end
 
   # Sample resource route with sub-resources:
   #   resources :products do

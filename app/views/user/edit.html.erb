@@ -1,0 +1,4 @@
+
+		<%= form_for :user,:url=>{:action=>"update",:id=>@user} do |f| %>
+		   <%= render :partial=>"form",:locals=>{:option=>"Edit User",:legend=>"Update user",:f=>f}%>
+	    <% end %>

@@ -1,0 +1,7 @@
+
+	
+		<%= form_tag :action=>'create' do %>
+		<fieldset><legend>New User</legend>
+		   <%= render :partial=>"form",:locals=>{:option=>"Create New User"}%>
+	    <% end %>
+       </fieldset>
