@@ -18,14 +18,11 @@ class UserController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-      respond_to do |format|
-        format.html { 
-         @user.save ? redirect_to(user_index_path, :notice => "User created") : render(:new)
-        }
-        format.json { 
-           @user.save ? render(:index) : render(:json => { :errors => @user.errors }, :status => :not_acceptable)
-        }
-      end
+         if @user.save
+           redirect_to(user_index_path(@user), :status=> :found, :notice => "New User created sucessfully") 
+         else
+          render 'new'
+         end
  end
 
 

@@ -14,8 +14,7 @@
   <%= stylesheet_link_tag "comman"%>
   <%= stylesheet_link_tag  'css/layout' %>
   <%= stylesheet_link_tag    "css/ui-darkness/jquery-ui-1.8.12.custom.css","css/plugin/jquery.visualize.css","css/plugin/facebox.css","css/plugin/uniform.default.css","css/plugin/dataTables.css","css/custom.css" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head> 
  
 <body> 
@@ -86,17 +85,10 @@
 <div id="masthead">
 
 </div>
-	    
+	
 	<div id="content" class="grid" style="height: auto !important; min-height: 460px;">
 		
-		<% if flash[:error] -%>
- 			<p class="validation"><%=h flash[:error] %></p>
-		<% end -%>
-		<% if flash[:notice] -%>
- 		 <p class="success"><%=h flash[:notice] %></p>
-		<% end -%>
-	    <%= yield%>
-	
+	<%= yield%>
 	</div>
 	
 	<div id="footer">		

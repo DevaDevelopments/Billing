@@ -1,3 +1,4 @@
+#require "digest/sha1"
 class User < ActiveRecord::Base
   validates_presence_of :email,:password,:name
   validates_uniqueness_of :name
@@ -5,12 +6,14 @@ class User < ActiveRecord::Base
   
    attr_accessor    :password
    
-   def before_create
-   self.hashed_pasword = User.hash_pasword(self.password)
+   before_create :change_password
+   after_create :unchange_password
+   
+   def change_password
     self.hashed_password = User.hash_pasword(self.password)
   end
   
-  def after_create
+  def unchange_password
     password = nil
   end
   
