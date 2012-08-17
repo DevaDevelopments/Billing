@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password,:email
   
    attr_accessor    :password
+   attr_accessible  :name, :password
    
    before_create :change_password
    after_create :unchange_password
@@ -19,7 +20,7 @@ class User < ActiveRecord::Base
   
   def self.login(name,password)
     hashed_pasword  = hash_pasword(password || "")
-    self.find(:first,:conditions =>["name =? and hashed_pasword =?",name,hashed_pasword])
+    self.find(:first,:conditions =>["name =? and hashed_password =?",name,hashed_pasword])
   end
   
   def try_to_login

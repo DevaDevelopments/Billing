@@ -15,7 +15,19 @@ class UserController < ApplicationController
   end
   
   def login
-    mnbb
+  end
+
+  def send_login
+    @user = User.new(params[:user])
+    logged_in_user = @user.try_to_login
+    if logged_in_user
+      session[:user_id] = logged_in_user.id
+      flash[:notice] = "You are now Logged in"
+      redirect_to(user_index_path(@user), :status=> :found, :notice => "You hav loged in ") 
+    else
+      flash[:error] = "Incorrect Username and password"
+      redirect_to login_user_index_path
+    end
   end
 
   def menu

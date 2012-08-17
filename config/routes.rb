@@ -16,6 +16,8 @@ Billing::Application.routes.draw do
      resources :user ,:except=>"show" do
        collection do
          post :update
+         get  :login
+         post  :send_login
        end
     end
 

@@ -10,24 +10,20 @@
 	    <%= stylesheet_link_tag    "application","comman",'login' %>
 	   </head> 
  
-<body> <div id="login">
-	<% if flash[:error] -%>
- 			<p class="error"><%=h flash[:error] %></p>
-		<% end -%>
-		<% if flash[:notice] -%>
- 		 <p class="success"><%=h flash[:notice] %></p>
-	<% end -%>
+<body> 
+
+<div id="login">
 		<div id="login_panel">
-		<%= form_tag send_login_user_index_path do %>	
+		<%= form_tag :action=>'create' do %>	
 			<div class="login_fields">
 				<div class="field">
 					<label for="">User Name</label>
-					<%= text_field 'user','name',:tabindex=>"1"  ,:placeholder=>"user name"%>		
+					<input type="text" name="" value="" id="" tabindex="1"  placeholder="user name" />		
 				</div>
 				
 				<div class="field">
 					<label for="password">Password</label>
-					<%= text_field 'user','password',:tabindex=>"1"  ,:placeholder=>"password"%>		
+					<input type="password" name="" value="" id="" tabindex="2" placeholder="password" />			
 				</div>
 			</div> 
 			
@@ -36,7 +32,6 @@
 			</div>
 		<% end %>
 	</div> 		
-	
 </div> 
 
 </body> 
