@@ -15,8 +15,8 @@ Billing::Application.routes.draw do
 #   Sample resource route with options:
      resources :user ,:except=>"show" do
        collection do
-#         put :update
-         get  :login
+         get   :logout
+         get   :login
          post  :send_login
        end
     end
