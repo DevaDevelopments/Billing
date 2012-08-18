@@ -25,9 +25,9 @@
 		
 		<div class="content_pad">			
 			<ul class="right">
-				<li><a href="@" class="top_icon"><span class="ui-icon ui-icon-person"></span>Logged in as User Name</a></li>
+				<li><a href="@" class="top_icon"><span class="ui-icon ui-icon-person"></span>Logged in as <b style="color:red"><%= User.find(session[:user_id]).name.titleize%></b></a></li>
 				<li><a href="@">Settings</a></li>
-				<li><a href="@">Logout</a></li>
+				<li><%= link_to 'Logout',logout_user_index_path%></li>
 			</ul>
 		</div> 
 		
