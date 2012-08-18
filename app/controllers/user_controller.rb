@@ -46,7 +46,7 @@ class UserController < ApplicationController
  def destroy
   @user = User.find(params[:id])
   @user.destroy
-  redirect_to(user_index_path(@user), :status=> :found, :notice => "New removed sucessfully")
+  redirect_to(user_index_path(@user), :status=> :found, :notice => "User removed sucessfully")
  end
 
  def update

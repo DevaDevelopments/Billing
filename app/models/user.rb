@@ -1,7 +1,13 @@
 #require "digest/sha1"
 class User < ActiveRecord::Base
-  validates_presence_of :email,:password,:name
-  validates_uniqueness_of :name
+  
+  #--------------------------ASSOCIATION BLOCK-------------------------------------
+   has_many :address_details, :as => 'addressable' 
+  
+  #--------------------------VALIDATION BLOCK--------------------------------------
+  
+#  validates_presence_of :email,:password,:name
+#  validates_uniqueness_of :name
   validates_confirmation_of :password,:email
   
    attr_accessor    :password
