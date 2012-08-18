@@ -35,6 +35,7 @@ class UserController < ApplicationController
 
   def create
      @user = User.new(params[:user])
+     @user.email=  params[:user][:email]
      if @user.save
        redirect_to(user_index_path(@user), :status=> :found, :notice => "New User created sucessfully") 
      else
