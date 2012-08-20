@@ -1,21 +1,19 @@
 #require "digest/sha1"
 class User < ActiveRecord::Base
   
-  #--------------------------ASSOCIATION BLOCK-------------------------------------
-   has_many :address_details, :as => 'addressable' 
-  
-  #--------------------------VALIDATION BLOCK--------------------------------------
-  
-#  validates_presence_of :email,:password,:name
-#  validates_uniqueness_of :name
-  validates_confirmation_of :password,:email
-  
    attr_accessor    :password
-   attr_accessible  :name, :password
+   attr_accessible  :name
+
+  
+  validates_presence_of :email,:password,:name
+  validates_uniqueness_of :name
+  validates_confirmation_of :password,:email
+   
    
    before_create :change_password
    after_create :unchange_password
    
+
    def change_password
     self.hashed_password = User.hash_pasword(self.password)
   end

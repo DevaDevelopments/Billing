@@ -51,7 +51,9 @@ class UserController < ApplicationController
 
  def update
   @user = User.find(params[:id])
+   @user.update_attributes(params[:user])
     if @user.update_attributes(params[:user])
+      
        redirect_to(user_index_path(@user), :status=> :found, :notice => @user.name + "Details updated sucessfully") 
      else
       render 'edit'
