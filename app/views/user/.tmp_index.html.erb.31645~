@@ -1,0 +1,27 @@
+		<table class="data display datatable" id="example">
+					<thead>
+						<tr>
+							<th>S.No</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% s_no = 0%>
+                       <% @user.each do |user|%>
+					     <% s_no += 1%>
+					     <tr class="<%= cycle("odd gradeX", "even gradeC") %>">
+					     	<td><%= s_no %></td>
+					     	<td><%= user.name%></td>
+							<td><%= user.email%></td>
+							<td><%= link_to 'Edit User', edit_user_path(user) %></td>
+							<td><%= link_to 'Remove User', user, :confirm => 'Are you sure?', :method => :delete,:remote=>true %></td>
+					     </tr>
+						 
+					   <% end %>
+					</tbody>
+				</table>
+				
+				<div id="example"><b><%= link_to 'Create New User', new_user_path %></b> </div>

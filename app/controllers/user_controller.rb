@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   layout 'menu',:except=>['login']
-  respond_to :html, :xml, :json
+#  respond_to :html, :xml, :json
   
   def index
     @user = User.all
