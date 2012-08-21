@@ -7,7 +7,7 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
 	<title>Login</title> 
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	    <%= stylesheet_link_tag    "comman",'login' %>
+	    <%= stylesheet_link_tag    "application","comman",'login' %>
 	   </head> 
  
 <body> <div id="login">
