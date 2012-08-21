@@ -23,15 +23,29 @@ Billing::Application.routes.draw do
          get   :login
          post  :send_login
        end
-    end
+   end
+   
+   
+#   namespace :master do
+#     resources :employee do
+#       collection do
+#          get :index
+#       end
+#     end
+#   end
+#   
+   
 
 
 # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+     namespace :master do
+       # Directs /admin/products/* to Admin::ProductsController
+       # (app/controllers/admin/products_controller.rb)
+       resources :customer
+       resources :employees
+     end
+
+
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

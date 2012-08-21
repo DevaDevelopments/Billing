@@ -27,11 +27,13 @@ Billing::Application.routes.draw do
 
 
 # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+     namespace :master do
+       # Directs /admin/products/* to Admin::ProductsController
+       # (app/controllers/admin/products_controller.rb)
+       resources :customer
+     end
+
+
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
