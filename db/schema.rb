@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120821122959) do
+=======
+ActiveRecord::Schema.define(:version => 20120821103926) do
+>>>>>>> 4529259d515a659326d5642dd38467ecf79aae0c
 
   create_table "address_details", :force => true do |t|
     t.integer  "addressable_id"
@@ -28,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20120821122959) do
     t.integer  "update_by"
     t.string   "website"
     t.boolean  "status",           :default => true
+    t.string   "blood_group"
+    t.integer  "telephone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

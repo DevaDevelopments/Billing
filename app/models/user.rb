@@ -1,6 +1,7 @@
 #require "digest/sha1"
 class User < ActiveRecord::Base
-  
+   has_many :address_details, :as => 'addressable'
+   
    attr_accessor    :password
    attr_accessible  :name,:password
 
