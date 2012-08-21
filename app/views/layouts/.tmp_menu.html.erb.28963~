@@ -44,7 +44,7 @@
 						<ul>
 							<li><a href="">Catagory</a></li>	
 							<li><a href="">Item</a></li>	
-							<li><%= link_to "Customer",master_customer_index_path%></li>
+							<li><a href="">Customer</a></li>
 							<li><a href="">Client</a></li>							
 							<li><a href="">Supplier</a></li>	
 							<li><a href="">Employe</a></li>						

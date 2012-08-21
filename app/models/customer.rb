@@ -1,4 +1,3 @@
 class Customer < ActiveRecord::Base
-    has_many :address_details, :as => 'addressable' 
-
+  has_many :address_details, :as => 'addressable'
 end
