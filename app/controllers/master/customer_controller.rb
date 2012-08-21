@@ -5,7 +5,21 @@ class Master::CustomerController < ApplicationController
   end
   
   def create
-    sdfd
+    @customer = Customer.new(params[:customer])
+    if @customer.save
+      @customer.address_details.build(params[:address])
+      @customer.save
+       redirect_to(master_customer_index_path)
+    end
   end
+  
+#  def destroy
+#    sdfd
+# raise params.inspect
+#  @customer = Customer.find(params[:id])
+#  @customer.destroy
+#  flash[:notice] = "Customer removed sucessfully"
+#  render :action=> 'index'
+#  end
 
 end

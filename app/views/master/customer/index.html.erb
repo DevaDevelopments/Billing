@@ -7,10 +7,10 @@
 					<div class="field"><label for="">Telephone Number </label> <%= text_field 'address','telephone_number',:size=>"30",:class=>"medium"%></div>
 					<div class="field"><label for="">Addrees </label> <%= text_field 'address','address_1',:size=>"30",:class=>"medium"%></div>
 					<div class="field"><label for="">E-Mail ID </label><%= text_field 'address','email',:size=>"30",:class=>"medium"%></div>
-					<div class="field"><label for="">City </label> <%= collection_select 'address','city',{},:id,:name,{:class=>"medium",:prompt=>"Select the City"}%></div>
-					<div class="field"><label for="">State </label>	<%= collection_select 'address','state',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
-					<div class="field"><label for="">Country </label><%= collection_select 'address','country',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
-					<div class="field"><label for="">Pincode </label> <%= text_field 'address','pincode',:size=>"20",:class=>"medium"%></div>
+					<div class="field"><label for="">City </label> <%= collection_select 'address','city_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the City"}%></div>
+					<div class="field"><label for="">State </label>	<%= collection_select 'address','state_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
+					<div class="field"><label for="">Country </label><%= collection_select 'address','country_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
+					<div class="field"><label for="">Pincode </label> <%#= text_field 'address','pincode',:size=>"20",:class=>"medium"%></div>
 					<div class="buttonrow">
 						<button class="btn btn-black">Add</button>
 				    </div>	
@@ -18,9 +18,7 @@
 		</div>
 		
 		<br/><br><br><br>
-		<br/>
-		<br/>
-				
+	
 		<table class="data display datatable" id="example">
 					<thead>
 						<tr>
@@ -33,37 +31,17 @@
 						</tr>
 					</thead>
 					<tbody>
+						<% s_no = 0%>
+						<% Customer.all.each do |customer|%>
 						<tr class="odd gradeX">
-							<td>1</td>
-							<td>cus0001</td>
-							<td><a href="">Dinesh</a></td>
-							<td>9944999493</td>
-							<td><a href="">Edit</a></td>
-							<td><a href="">Delete</a></th>
+							<td><%= s_no += 1 %></td>
+							<td><%= customer.id%></td>
+							<td><a href=""><%= customer.name%></a></td>
+							<td><%= customer.name%></td>
+							<td><%= link_to 'Edit Customer', edit_master_customer_path(customer) %></td>
+							<td><%= link_to 'Remove Customer', master_customer_path(customer.id), :confirm => 'Are you sure?',:method=>:delete %></td>
+							
 						</tr>
-						<tr class="even gradeC">
-							<td>2</td>
-							<td>cus0002</td>
-							<td><a href="">Mohan Kumar</a></td>
-							<td>9944500540</td>
-							<td><a href="">Edit</a></td>
-							<td><a href="">Delete</a></th>
-						</tr>
-						<tr class="odd gradeX">
-							<td>3</td>
-							<td>cus0003</td>
-							<td><a href="">Ragu</a></td>
-							<td>1234567892</td>
-							<td><a href="">Edit</a></td>
-							<td><a href="">Delete</a></th>
-						</tr>
-						<tr class="odd gradeX">
-							<td>4</td>
-							<td>cus0004</td>
-							<td><a href="">Karthi</a></td>
-							<td>9874563218</td>
-							<td><a href="">Edit</a></td>
-							<td><a href="">Delete</a></th>
-						</tr>
+						<%end%>
 					</tbody>
 				</table>

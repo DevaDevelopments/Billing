@@ -17,21 +17,24 @@ Billing::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
 
 #   Sample resource route with options:
-     resources :user ,:except=>"show" do
-       collection do
-         get   :logout
-         get   :login
-         post  :send_login
-       end
-    end
+
 
 
 # Sample resource route within a namespace:
      namespace :master do
        # Directs /admin/products/* to Admin::ProductsController
        # (app/controllers/admin/products_controller.rb)
-       resources :customer
-     end
+       resources :customer,:except=>"show" do
+       end
+   end
+   
+    resources :user ,:except=>"show" do
+       collection do
+         get   :logout
+         get   :login
+         post  :send_login
+       end
+    end
 
 
   # Sample resource route with sub-resources:
