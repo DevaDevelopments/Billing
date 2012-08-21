@@ -47,7 +47,7 @@
 							<li><a href="">Customer</a></li>
 							<li><a href="">Client</a></li>							
 							<li><a href="">Supplier</a></li>	
-							<li><%= link_to 'Employee', :controller => '/employees', :action => 'index' %></li>						
+							<li><a href="">Employe</a></li>						
 							<li><a href=""></a></li>
 						</ul>
 				  </div>

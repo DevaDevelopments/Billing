@@ -23,7 +23,15 @@ Billing::Application.routes.draw do
          get   :login
          post  :send_login
        end
-    end
+   end
+   
+   resources :employees do
+     collection do
+      get :index
+     end
+   end
+   
+   
 
   # Sample resource route with sub-resources:
   #   resources :products do
