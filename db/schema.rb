@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20120821122959) do
-=======
 ActiveRecord::Schema.define(:version => 20120821103926) do
->>>>>>> 4529259d515a659326d5642dd38467ecf79aae0c
 
   create_table "address_details", :force => true do |t|
     t.integer  "addressable_id"
@@ -61,16 +57,6 @@ ActiveRecord::Schema.define(:version => 20120821103926) do
     t.integer  "created_by"
     t.integer  "updated_by"
     t.boolean  "status",      :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "employees", :force => true do |t|
-    t.string   "employeeid"
-    t.string   "employee_name"
-    t.boolean  "status",        :default => true
-    t.integer  "created_by"
-    t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
