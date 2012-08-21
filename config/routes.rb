@@ -25,12 +25,15 @@ Billing::Application.routes.draw do
        end
    end
    
-   resources :employees do
-     collection do
-      get :index
-     end
-   end
    
+#   namespace :master do
+#     resources :employee do
+#       collection do
+#          get :index
+#       end
+#     end
+#   end
+#   
    
 
   # Sample resource route with sub-resources:
