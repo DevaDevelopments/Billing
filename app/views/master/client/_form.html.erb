@@ -1,0 +1,60 @@
+<fieldset><legend><%= legend %></legend>
+		<table border=1 width="100%" cellspacing=30>
+		   	<tr>
+		   		<td><label>Client ID</label></td>
+				<td> <%= f.text_field 'clientid'%></td>
+				<td>Client Name</td>
+				<td><%= f.text_field 'client_name'%></td>
+		   	</tr>
+		  	<tr>
+		   		<td>Company Name</td>
+				<td><%= f.text_field 'company_name'%></td>
+				<td>TIN Number</td>
+				<td><%= f.password_field 'tin_no'%></td>
+		   	</tr>
+			<tr>
+		   		<td>CST Number</td>
+				<td><%= f.password_field 'cst_no'%></td>
+				<td> Contact Person</td>
+				<td><%= f.check_box  'contact_person' %></td>
+		   	</tr>
+			
+			<tr>
+		   		<td>Mobile Number</td>
+				<td><%= f.text_field 'address','mobile_no'%></td>
+				<td>Telephone Number</td>
+				<td><%= f.text_field 'address','telephone_no'%></td>
+		   	</tr>
+			<tr>
+				<td>E-Mail ID</td>
+				<td><%= f.text_field 'address','email_id'%></td>
+				<td>Address</td>
+				<td><%= f.text_field 'address','address'%></td>
+			</tr>	
+			<tr>
+				<td>City</td>
+				<td><%= collection_select 'address','city_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the City"}%></td>
+				<td>State</td>
+				<td><%= collection_select 'address','state_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></td>
+			</tr>
+			<tr>
+				<td>Country</td>
+				<td><%= collection_select 'address','country_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></td>
+				<td>PinCode</td>
+				<td><%= f.text_field 'address','pincode'%></td>
+			</tr>
+			<tr>
+				<td><td>
+				<td><%= f.submit option,:class=>"btn btn-black",:id=>'submit1' %></td>
+				<td></td>
+			</tr>
+     </table>
+	 </fieldset>
+	 
+	 <script>
+	 	$(document).ready(function(){
+				$("submit2").click(function(){
+					alert(1)
+				});
+			});
+	 </script>
