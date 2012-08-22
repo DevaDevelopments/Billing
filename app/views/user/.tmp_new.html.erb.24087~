@@ -1,5 +1,0 @@
-		<%= form_for :user,:url=>{:action=>"create"},:method=> :post do |f| %>
-		
-		   <%= render :partial=>"form",:locals=>{:option=>"Create New User",:legend=>"New user",:f=>f}%>
-	    <% end %>
-       
