@@ -17,7 +17,7 @@
 					     	<td><%= user.name%></td>
 							<td><%= user.email%></td>
 							<td><%= link_to 'Edit User', edit_user_path(user) %></td>
-							<td><%= link_to 'Remove User', user, :confirm => 'Are you sure?', :method => :delete,:remote=>true %></td>
+							<td><%= link_to 'Remove User', user, :confirm => 'Are you sure?',:remote=>true %></td>
 					     </tr>
 						 
 					   <% end %>

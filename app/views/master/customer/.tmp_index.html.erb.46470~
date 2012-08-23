@@ -1,0 +1,47 @@
+<h3>Customer Master</h3>
+		<div class="grid10">
+			<%= form_for :customer,:url=>{:action=>"create"},:method=> :post,:html => { :class => "form label-inline uniform"} do |f| %>
+					<div class="field"><label for="">Customer ID </label> <%= text_field 'customer','customer_id',:size=>"20",:class=>"medium"%></div>
+					<div class="field"><label for="">Customer Name </label><%= text_field 'customer','name',:size=>"30",:class=>"medium"%> </div>
+					<div class="field"><label for="">Mobile Number </label> <%= text_field 'address','mobile_no',:size=>"30",:class=>"medium"%></div>
+					<div class="field"><label for="">Telephone Number </label> <%= text_field 'address','telephone_number',:size=>"30",:class=>"medium"%></div>
+					<div class="field"><label for="">Addrees </label> <%= text_field 'address','address_1',:size=>"30",:class=>"medium"%></div>
+					<div class="field"><label for="">E-Mail ID </label><%= text_field 'address','email',:size=>"30",:class=>"medium"%></div>
+					<div class="field"><label for="">City </label> <%= collection_select 'address','city_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the City"}%></div>
+					<div class="field"><label for="">State </label>	<%= collection_select 'address','state_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
+					<div class="field"><label for="">Country </label><%= collection_select 'address','country_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
+					<div class="field"><label for="">Pincode </label> <%#= text_field 'address','pincode',:size=>"20",:class=>"medium"%></div>
+					<div class="buttonrow">
+						<button class="btn btn-black">Add</button>
+				    </div>	
+		    <% end %>				
+		</div>
+		
+		<br/><br><br><br>
+	
+		<table class="data display datatable" id="example">
+					<thead>
+						<tr>
+							<th>S.No</th>
+							<th>Customer ID</th>
+							<th>Customer Name </th>
+							<th>Mobile Number</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% s_no = 0%>
+						<% Customer.all.each do |customer|%>
+						<tr class="odd gradeX">
+							<td><%= s_no += 1 %></td>
+							<td><%= customer.id%></td>
+							<td><a href=""><%= customer.name%></a></td>
+							<td><%= customer.name%></td>
+							<td><%= link_to 'Edit Customer', edit_master_customer_path(customer) %></td>
+							<td><%= link_to 'Remove Customer', master_customer_path(customer.id), :confirm => 'Are you sure?',:method=>:delete %></td>
+							
+						</tr>
+						<%end%>
+					</tbody>
+				</table>

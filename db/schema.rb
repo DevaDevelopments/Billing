@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120822104429) do
+ActiveRecord::Schema.define(:version => 20120823064942) do
 
   create_table "address_details", :force => true do |t|
     t.integer  "addressable_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120822104429) do
     t.integer  "telephone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pincode"
   end
 
   create_table "cities", :force => true do |t|
