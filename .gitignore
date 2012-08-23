@@ -23,6 +23,8 @@
 *.metadata
 /tmp/**/*.log
 *./tmp/**
+/tmp
+
 # Logs and databases #
 ######################
 *.log

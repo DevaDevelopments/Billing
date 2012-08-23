@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
  protect_from_forgery
- before_filter :authorize_access , :except => [:login, :send_login]
+ #before_filter :authorize_access , :except => [:login, :send_login]
    layout 'menu',:except=>['login'] 
   private #-----------------------
   
