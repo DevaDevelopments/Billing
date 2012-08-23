@@ -21,6 +21,7 @@
 *.tar
 *.zip
 *.metadata
+/tmp/**/*.log
 
 # Logs and databases #
 ######################
