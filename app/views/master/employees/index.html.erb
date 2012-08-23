@@ -19,7 +19,7 @@
 			<tr class="<%= cycle("odd gradeX", "even gradeC") %>">
 				<td><%= s_no += 1%></td>
 				<td><%= emp.employeeid%></td>
-				<td><%= emp.name%></td>
+				<td><%= emp.employee_name%></td>
 				<td><%= link_to 'Edit Employee', edit_master_employee_path(emp) %></td>
 				<td><%= link_to 'Remove Employee', master_employee_destroy_employee_path(emp), :confirm => 'Are you sure?' %></td>
 			</tr>
