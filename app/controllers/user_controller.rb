@@ -24,6 +24,7 @@ class UserController < ApplicationController
       session[:user_id] = logged_in_user.id
       flash[:notice] = "You are now Logged in"
       redirect_to(user_index_path(@user), :status=> :found, :notice => "You hav loged in ") 
+      
     else
       flash[:error] = "Incorrect Username and password"
       redirect_to login_user_index_path

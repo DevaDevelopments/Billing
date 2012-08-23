@@ -1,4 +1,4 @@
-<%= form_for :client,:url=>{:action=>"create"},:method=> :post do |f| %>
+<%= form_for :user,:url=>{:action=>"create"},:method=> :post do |f| %>
 		
 		   <%= render :partial=>"form",:locals=>{:option=>"Create New Client",:legend=>"New user",:f=>f}%>
 <% end %>

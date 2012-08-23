@@ -4,7 +4,7 @@
 		   		<td><label>Client ID</label></td>
 				<td> <%= f.text_field 'clientid'%></td>
 				<td>Client Name</td>
-				<td><%= f.text_field 'name'%></td>
+				<td><%= f.text_field 'client_name'%></td>
 		   	</tr>
 		  	<tr>
 		   		<td>Company Name</td>
@@ -21,15 +21,15 @@
 			
 			<tr>
 		   		<td>Mobile Number</td>
-				<td><%= text_field 'address','mobile_no'%></td>
+				<td><%= f.text_field 'address','mobile_no'%></td>
 				<td>Telephone Number</td>
-				<td><%= text_field 'address','telephone_no'%></td>
+				<td><%= f.text_field 'address','telephone_no'%></td>
 		   	</tr>
 			<tr>
 				<td>E-Mail ID</td>
-				<td><%= text_field 'address','email_id'%></td>
+				<td><%= f.text_field 'address','email_id'%></td>
 				<td>Address</td>
-				<td><%= text_field 'address','address'%></td>
+				<td><%= f.text_field 'address','address'%></td>
 			</tr>	
 			<tr>
 				<td>City</td>
@@ -41,7 +41,7 @@
 				<td>Country</td>
 				<td><%= collection_select 'address','country_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></td>
 				<td>PinCode</td>
-				<td><%= text_field 'address','pincode'%></td>
+				<td><%= f.text_field 'address','pincode'%></td>
 			</tr>
 			<tr>
 				<td><td>
