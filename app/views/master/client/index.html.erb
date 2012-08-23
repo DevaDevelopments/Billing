@@ -16,9 +16,9 @@
 					     <tr class="<%= cycle("odd gradeX", "even gradeC") %>">
 					     	<td><%= s_no %></td>
 					     	<td><%= client.name%></td>
-							<td><%= client.email%></td>
+							<td><%#= address.email%></td>
 							<td><%= link_to 'Edit User', edit_master_client_path(client) %></td>
-							<td><%= link_to 'Remove User', client, :confirm => 'Are you sure?', :method => :delete,:remote=>true %></td>
+							<td><%= link_to 'Remove User', master_client_path(client.id), :confirm => 'Are you sure?', :method => :delete %></td>
 					     </tr>
 						 
 					   <% end %>
