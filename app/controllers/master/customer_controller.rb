@@ -13,13 +13,11 @@ class Master::CustomerController < ApplicationController
     end
   end
   
-#  def destroy
-#    sdfd
-# raise params.inspect
-#  @customer = Customer.find(params[:id])
-#  @customer.destroy
-#  flash[:notice] = "Customer removed sucessfully"
-#  render :action=> 'index'
-#  end
+ def destroy_customer
+ @customer = Customer.find(params[:id])
+ @customer.destroy
+ flash[:notice] = "Customer removed sucessfully"
+ render :action=> 'index'
+ end
 
 end

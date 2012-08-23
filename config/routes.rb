@@ -38,10 +38,14 @@ Billing::Application.routes.draw do
      namespace :master do
        # Directs /admin/products/* to Admin::ProductsController
        # (app/controllers/admin/products_controller.rb)
-       resources :customer
-       resources :employees do
-         get     :destroy_employee
+       resources :customer do
+         get     :destroy_cutomer 
        end
+
+       resources :employees do
+         get     :destroy_employee 
+       end
+
        resources :client
      end
 
