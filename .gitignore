@@ -22,7 +22,7 @@
 *.zip
 *.metadata
 /tmp/**/*.log
-
+*./tmp/**
 # Logs and databases #
 ######################
 *.log

@@ -18,7 +18,7 @@
 					     	<td><%= client.name%></td>
 							<td><%#= address.email%></td>
 							<td><%= link_to 'Edit User', edit_master_client_path(client) %></td>
-							<td><%= link_to 'Remove User', master_client_path(client.id), :confirm => 'Are you sure?', :method => :delete %></td>
+							<td><%= link_to 'Remove User', master_client_destroy_client_path(client.id), :confirm => 'Are you sure?' %></td>
 					     </tr>
 						 
 					   <% end %>
