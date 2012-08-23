@@ -4,7 +4,7 @@
 							<th>S.No</th>
 							<th>Client ID</th>
 							<th>Client Name</th>
-							<th>Mobile Number</th>
+							<th>Email</th>
 							<th>Edit</th>
 							<th>Delete</th>
 						</tr>
@@ -14,9 +14,10 @@
                        <% @client.each do |client|%>
 					     <% s_no += 1%>
 					     <tr class="<%= cycle("odd gradeX", "even gradeC") %>">
-					     	<td><%= s_no %></td>
+					     	<td><%=s_no%></td>
+					     	<td><%= client.clientid %></td>
 					     	<td><%= client.name%></td>
-							<td><%#= address.email%></td>
+							<td><%= client.address_details.first.email%></td>
 							<td><%= link_to 'Edit User', edit_master_client_path(client) %></td>
 							<td><%= link_to 'Remove User', master_client_destroy_client_path(client.id), :confirm => 'Are you sure?' %></td>
 					     </tr>
