@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
  protect_from_forgery
  #before_filter :authorize_access , :except => [:login, :send_login]
    layout 'menu',:except=>['login'] 
+  
+  
+  def get_code
+    Uniqueid.where(:class_name => self.name).last
+  end  
   private #-----------------------
   
   
