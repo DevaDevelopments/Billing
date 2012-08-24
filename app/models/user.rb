@@ -1,7 +1,11 @@
-require 'autogen'
+# require 'my_module'
+# load 'my_module.rb'
 
 class User < ActiveRecord::Base
+   include MyModule
+
    has_many :address_details, :as => 'addressable'
+   
    
    attr_accessor    :password
    attr_accessible  :name,:password

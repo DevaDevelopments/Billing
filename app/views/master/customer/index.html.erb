@@ -27,7 +27,6 @@
 							<td><%= customer.name%></td>
 							<td><%= link_to 'Edit Customer', edit_master_customer_path(customer) %></td>
 							<td><%= link_to 'Remove Customer', master_customer_destroy_cutomer_path(customer.id), :confirm => 'Are you sure?' %></td>
-							
 						</tr>
 						<%end%>
 					</tbody>

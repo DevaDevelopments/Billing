@@ -19,6 +19,7 @@ class UserController < ApplicationController
   end
 
   def send_login
+    raise User.first_module_method.inspect
     @user = User.new(params[:user])
     logged_in_user = @user.try_to_login
     if logged_in_user
