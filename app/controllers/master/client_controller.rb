@@ -17,6 +17,7 @@ class Master::ClientController < ApplicationController
   
   def edit
     @client = Client.find(params[:id])
+    @address = @client.address_details.first
     @action = 'update'
     render :action=> 'index'
   end
@@ -29,10 +30,10 @@ class Master::ClientController < ApplicationController
   end
   
   def update
-    @client = Client.find(params[:id])
-    if @client.update_attributes(params[:client])
-       @client.address_details.build(params[:address])
-       @client.save
+    @clientt = Client.find(params[:id])
+    if @clientt.update_attributes(params[:client])
+       @clientt.address_details.build(params[:address])
+       @clientt.save
        flash[:notice] = "Client Updated sucessfully"
        render :action => 'index'
     end
