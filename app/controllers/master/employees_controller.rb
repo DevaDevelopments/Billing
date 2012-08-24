@@ -1,5 +1,5 @@
 
-include 'abaranji'
+#include 'abaranji'
 
 class Master::EmployeesController < ApplicationController
   
