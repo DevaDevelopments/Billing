@@ -1,0 +1,15 @@
+			<%= form_for :customer,:url=>{:action=>action},:method=> type,:html => { :class => "form label-inline uniform"} do |f| %>
+					<div class="field"><label for="">Customer ID </label> <%= text_field 'customer','customer_id',:size=>"20",:class=>"medium"%></div>
+					<div class="field"><label for="">Customer Name </label><%= text_field 'customer','name',:size=>"30",:class=>"medium"%> </div>
+					<div class="field"><label for="">Mobile Number </label> <%= text_field 'address','mobile_no',:size=>"30",:class=>"medium"%></div>
+					<div class="field"><label for="">Telephone Number </label> <%= text_field 'address','telephone_number',:size=>"30",:class=>"medium"%></div>
+					<div class="field"><label for="">Addrees </label> <%= text_field 'address','address_1',:size=>"30",:class=>"medium"%></div>
+					<div class="field"><label for="">E-Mail ID </label><%= text_field 'address','email',:size=>"30",:class=>"medium"%></div>
+					<div class="field"><label for="">City </label> <%= collection_select 'address','city_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the City"}%></div>
+					<div class="field"><label for="">State </label>	<%= collection_select 'address','state_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
+					<div class="field"><label for="">Country </label><%= collection_select 'address','country_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
+					<div class="field"><label for="">Pincode </label> <%#= text_field 'address','pincode',:size=>"20",:class=>"medium"%></div>
+					<div class="buttonrow">
+						<button class="btn btn-black"><%= action_name %></button>
+				    </div>	
+		    <% end %>				

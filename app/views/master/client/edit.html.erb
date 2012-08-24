@@ -1,0 +1,3 @@
+<%= form_for :client,:url=>master_client_path(@client),:method=>:put do |f| %>
+		   <%= render :partial=>"form",:locals=>{:option=>"Edit Client",:legend=>"Update Client",:f=>f}%>
+	    <% end %>

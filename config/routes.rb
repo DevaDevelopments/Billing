@@ -2,7 +2,7 @@ Billing::Application.routes.draw do
   get "client/index"
 
   get "client/show"
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -38,10 +38,17 @@ Billing::Application.routes.draw do
      namespace :master do
        # Directs /admin/products/* to Admin::ProductsController
        # (app/controllers/admin/products_controller.rb)
-       resources :customer
-       resources :employees do
-         get     :destroy_employee
+       resources :catagories do
+          get     :destroy_catagory
        end
+       resources :customer do
+         get     :destroy_cutomer 
+       end
+
+       resources :employees do
+         get     :destroy_employee 
+       end
+
        resources :client do
          get     :destroy_client
        end

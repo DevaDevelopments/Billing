@@ -1,4 +1,5 @@
-#require "digest/sha1"
+require 'autogen'
+
 class User < ActiveRecord::Base
    has_many :address_details, :as => 'addressable'
    
