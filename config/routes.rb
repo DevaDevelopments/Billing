@@ -2,7 +2,7 @@ Billing::Application.routes.draw do
   get "client/index"
 
   get "client/show"
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
