@@ -38,6 +38,9 @@ Billing::Application.routes.draw do
      namespace :master do
        # Directs /admin/products/* to Admin::ProductsController
        # (app/controllers/admin/products_controller.rb)
+       resources :catagories do
+          get     :destroy_catagory
+       end
        resources :customer do
          get     :destroy_cutomer 
        end

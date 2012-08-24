@@ -25,7 +25,6 @@ class User < ActiveRecord::Base
   end
   
   def self.login(name,password)
-    raise self.a.inspect
     hashed_pasword  = hash_pasword(password || "")
     self.find(:first,:conditions =>["name =? and hashed_password =?",name,hashed_pasword])
   end

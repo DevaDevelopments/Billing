@@ -1,0 +1,32 @@
+<h3>Employee Master</h3>
+		<div class="grid10">
+			<%= render :partial=>"form",:locals=>{:action=>@action, :type => @action == 'create' ? 'post' : 'put', :action_name => @action == 'create' ? 'Add' : 'Modify'}%>	
+		<br><br><br>
+		</div>
+           
+           
+			<table class="data display datatable" id="example">
+					<thead>
+						<tr>
+							<th>S.No</th>
+							<th>Code</th>
+							<th>Catagory</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% seriel_no = 0 %>
+						<% Catagory.all.each do |catagory|%>
+						<tr>
+						<td><%= seriel_no += 1%></td>
+						<td><%= catagory.code%></td>
+						<td><%= catagory.name%></td>
+						<td><%= link_to 'Edit Catagory', edit_master_catagory_path(catagory) %></td>
+						<td><%= link_to 'Remove Catagory', master_catagory_destroy_catagory_path(catagory), :confirm => 'Are you sure?' %></td>
+					    <tr>
+					    <% end %>	
+					</tbody>
+
+					
+				</table>

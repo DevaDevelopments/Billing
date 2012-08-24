@@ -1,0 +1,2 @@
+module Master::CatagoriesHelper
+end
