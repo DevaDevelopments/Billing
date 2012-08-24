@@ -1,15 +1,9 @@
 class Master::ClientController < ApplicationController
   def index
-    @client = Client.all
+    @client = Client.new
+    @action = 'create'
   end
 
-  def show
-  end
-  
-  def new
-    @client = Client.new
-  end
-  
   def create
     @client = Client.new(params[:client])
     if @client.save
@@ -23,12 +17,15 @@ class Master::ClientController < ApplicationController
   
   def edit
     @client = Client.find(params[:id])
+    @action = 'update'
+    render :action=> 'index'
   end
   
   def destroy_client
     @client = Client.find(params[:client_id])  
     @client.destroy
-    redirect_to(master_client_index_path(@client), :status=> :found, :notice => "Client Removed Sucessfully")
+    flash[:notice] = "Client removed sucessfully"
+    render :action=> 'index'
   end
   
   def update
@@ -36,7 +33,8 @@ class Master::ClientController < ApplicationController
     if @client.update_attributes(params[:client])
        @client.address_details.build(params[:address])
        @client.save
-       redirect_to(master_client_index_path(@client),:status=> :found, :notice => "Updated Sucessfully")
+       flash[:notice] = "Client Updated sucessfully"
+       render :action => 'index'
     end
   end
   
