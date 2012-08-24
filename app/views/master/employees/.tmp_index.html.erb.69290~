@@ -1,0 +1,28 @@
+<h3>Employee Master</h3>
+		<div class="grid10">
+			<%= render :partial=>"form",:locals=>{:action=>@action, :id => @employee, :type => @action == 'create' ? 'post' : 'put', :action_name => @action == 'create' ? 'Add' : 'Modify'}%>	
+		</div>
+
+<table class="data display datatable" id="example">
+	<thead>
+		<tr>
+			<th>S.No</th>
+			<th>Employee ID</th>
+			<th>Employee Name</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% s_no = 0%>
+		<% Employee.all.each do |emp|%>
+			<tr class="<%= cycle("odd gradeX", "even gradeC") %>">
+				<td><%= s_no += 1%></td>
+				<td><%= emp.employeeid%></td>
+				<td><%= emp.employee_name%></td>
+				<td><%= link_to 'Edit Employee', edit_master_employee_path(emp) %></td>
+				<td><%= link_to 'Remove Employee', master_employee_destroy_employee_path(emp), :confirm => 'Are you sure?' %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

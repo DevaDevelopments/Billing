@@ -45,6 +45,9 @@ Billing::Application.routes.draw do
        resources :client do
          get     :destroy_client
        end
+       resources :item do
+         get     :destroy_item
+       end
      end
 
 

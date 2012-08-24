@@ -43,7 +43,7 @@
 				<div class="nav_menu">			
 						<ul>
 							<li><a href="">Catagory</a></li>	
-							<li><%= link_to "Item", master_item_index_path%></a></li>	
+							<li><a href="">Item</a></li>	
 							<li><%= link_to "Customer",master_customer_index_path%></li>
 							<li><%= link_to "Client",master_client_index_path%></li>							
 							<li><a href="">Supplier</a></li>	

@@ -1,3 +1,6 @@
+
+include 'Ab'
+
 class Master::EmployeesController < ApplicationController
   
   def index

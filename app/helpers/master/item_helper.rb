@@ -1,0 +1,2 @@
+module Master::ItemHelper
+end
