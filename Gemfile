@@ -7,9 +7,11 @@ gem 'rails', '3.1.1'
 
 #gem 'sqlite3'
 
-gem 'therubyracer', require: "v8"
+# gem 'therubyracer', require: "v8"
+# gem 'therubyracer', :platform => :ruby
 gem "pg"
-
+gem  'eventmachine','~>1.0.0.rc.4'
+# gem 'lib8'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -18,6 +20,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'thin'
 #  gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
+end
+group :production do
+  gem 'therubyracer-heroku', :platform => :ruby
 end
 
 gem 'jquery-rails'

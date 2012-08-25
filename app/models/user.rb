@@ -2,8 +2,7 @@
 # load 'my_module.rb'
 
 class User < ActiveRecord::Base
-   include MyModule
-
+   include CommanMethods
    has_many :address_details, :as => 'addressable'
    
    

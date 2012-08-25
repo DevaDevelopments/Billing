@@ -7,7 +7,7 @@ development:
   adapter: postgresql
   database: billing_dev #kg_31july #kg_cleandup_19june12_06072012.sql #kg_2712 #yashomati_live17apr
   username: postgres 
-  password: srishti
+  password: deva
   host: localhost
   port: 5433
 
