@@ -1,19 +1,23 @@
-		<%= form_for :client,:url=>{:action=>action},:method=> type,:html => {:class => "form label-inline uniform"} do |f| %>
-					<div class="field"><label for="">Client ID </label> <%= f.text_field 'clientid',:size=>"20",:class=>"medium"%></div>
-					<div class="field"><label for="">Client Name </label><%= f.text_field 'name',:size=>"30",:class=>"medium"%> </div>
-					<div class="field"><label for="">Company Name </label><%= f.text_field 'company_name',:size=>"30",:class=>"medium"%> </div>
-					<div class="field"><label for="">TIN Number </label><%= f.text_field 'tin_no',:size=>"30",:class=>"medium"%> </div>
-					<div class="field"><label for="">CST Number </label><%= f.text_field 'cst_no',:size=>"30",:class=>"medium"%> </div>
-					<div class="field"><label for="">Contact Person </label><%= f.text_field 'contact_person',:size=>"30",:class=>"medium"%> </div>
-					<div class="field"><label for="">Mobile Number </label> <%= text_field 'address','mobile_no',:size=>"30",:class=>"medium"%></div>
-					<div class="field"><label for="">Telephone Number </label> <%= text_field 'address','telephone_number',:size=>"30",:class=>"medium"%></div>
-					<div class="field"><label for="">Addrees </label> <%= text_field 'address','address_1',:size=>"30",:class=>"medium"%></div>
-					<div class="field"><label for="">E-Mail ID </label><%= text_field 'address','email',:size=>"30",:class=>"medium"%></div>
-					<div class="field"><label for="">City </label> <%= collection_select 'address','city_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the City"}%></div>
-					<div class="field"><label for="">State </label>	<%= collection_select 'address','state_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
-					<div class="field"><label for="">Country </label><%= collection_select 'address','country_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
-					<div class="field"><label for="">Pincode </label> <%#= text_field 'address','pincode',:size=>"20",:class=>"medium"%></div>
-					<div class="buttonrow">
-						<button class="btn btn-black"><%= action_name %></button>
-				    </div>	
-		<% end %>
+<% action = action.blank? ? 'create' : action%>
+<fieldset>
+  <legend><h3><%= action.titleize + " " + "New Client"  %></h3></legend>
+	<%= form_for :client,:url=>{:action=>action},:method=> type,:html => {:class => "form label-inline uniform"} do |f| %>
+		<div class="field"><label for="">Client ID </label> <%= f.text_field 'clientid',:size=>"20",:class=>"medium",:value=>action == 'create' ? (Client.generate_code) : client.clientid %></div>
+		<div class="field"><label for="">Client Name </label><%= f.text_field 'name',:size=>"30",:class=>"medium"%> </div>
+		<div class="field"><label for="">Company Name </label><%= f.text_field 'company_name',:size=>"30",:class=>"medium"%> </div>
+		<div class="field"><label for="">TIN Number </label><%= f.text_field 'tin_no',:size=>"30",:class=>"medium"%> </div>
+		<div class="field"><label for="">CST Number </label><%= f.text_field 'cst_no',:size=>"30",:class=>"medium"%> </div>
+		<div class="field"><label for="">Contact Person </label><%= f.text_field 'contact_person',:size=>"30",:class=>"medium"%> </div>
+		<div class="field"><label for="">Mobile Number </label> <%= text_field 'address','mobile_no',:size=>"30",:class=>"medium"%></div>
+		<div class="field"><label for="">Telephone Number </label> <%= text_field 'address','telephone_number',:size=>"30",:class=>"medium"%></div>
+		<div class="field"><label for="">Addrees </label> <%= text_field 'address','address_1',:size=>"30",:class=>"medium"%></div>
+		<div class="field"><label for="">E-Mail ID </label><%= text_field 'address','email',:size=>"30",:class=>"medium"%></div>
+		<div class="field"><label for="">City </label> <%= collection_select 'address','city_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the City"}%></div>
+		<div class="field"><label for="">State </label>	<%= collection_select 'address','state_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
+		<div class="field"><label for="">Country </label><%= collection_select 'address','country_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
+		<div class="field"><label for="">Pincode </label> <%= text_field 'address','pincode',:size=>"20",:class=>"medium"%></div>
+		<div class="buttonrow">
+			<button class="btn btn-black" style="margin-right: 200px"><%= action_name %></button>
+	    </div>	
+	<% end %>
+</fieldset>

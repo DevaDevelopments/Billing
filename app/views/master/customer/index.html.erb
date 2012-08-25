@@ -1,6 +1,5 @@
-<h3>Customer Master</h3>
 		<div class="grid10">
-						<%= render :partial=>"form",:locals=>{:action=>@action, :customer => @customer, :type => @action == 'create' ? 'post' : 'put', :action_name => @action == 'create' ? 'Add' : 'Modify'}%>	
+						<%= render :partial=>"form",:locals=>{:action=>@action, :customer => @customer, :type => @action == 'create' ? 'post' : 'put', :action_name => @action == 'create' ? 'Add' : 'Modify',:legend=>'Customer Master'}%>	
 
 		</div>
 		

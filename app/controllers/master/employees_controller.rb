@@ -14,7 +14,7 @@ class Master::EmployeesController < ApplicationController
   
   def create
     @employe = Employee.new(params[:employee])
-    if @employe.save
+    if @employe.save && @employe.update_code
       @employe.address_details.build(params[:address])
       @employe.save
       redirect_to(master_employees_path)
@@ -36,7 +36,7 @@ class Master::EmployeesController < ApplicationController
     if @employee.update_attributes(params[:employee])
       @employee.address_details.build(params[:address])
       @employee.save
-      render :action => 'index', :id => @employee
+      redirect_to :action => 'index', :id => @employee
     end
   end
   

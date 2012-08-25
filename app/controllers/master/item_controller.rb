@@ -26,7 +26,7 @@ class Master::ItemController < ApplicationController
   def update
     @itemm = Item.find(params[:id])
     if @itemm.update_attributes(params[:item])
-     render :action => 'index'
+     redirect_to :action => 'index'
     end
   end
   
@@ -34,7 +34,7 @@ class Master::ItemController < ApplicationController
    @item = Item.find(params[:item_id])
    @item.destroy
    flash[:notice] = "Item removed sucessfully"
-   render :action=> 'index'
+   redirect_to :action=> 'index'
  end
   
 end

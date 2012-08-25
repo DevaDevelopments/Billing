@@ -1,12 +1,11 @@
 class Master::ClientController < ApplicationController
   def index
     @client = Client.new
-    @action = 'create'
   end
 
   def create
     @client = Client.new(params[:client])
-    if @client.save
+    if @client.save && @client.update_code
        @client.address_details.build(params[:address])
        @client.save
        redirect_to(master_client_index_path(@client), :status=> :found, :notice => "New Client created sucessfully") 

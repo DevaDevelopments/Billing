@@ -1,10 +1,13 @@
-        <%= form_for :catogary,:url=>{:action=>action},:method=> type,:html => { :class => "form label-inline uniform"} do |f| %>
-					<div class="field"><label for="">Code </label> <%= f.text_field 'code',  :cols => 20,:class=>"medium"%></div>
-					<div class="field1"><label for="">Catagory Name </label> <%= f.text_field 'name',  :cols => 20,:class=>"medium"%></div>
-					<br><br><br>
-					
-					<div class="buttonrow">
-						<button class="btn btn-black" style="margin-right: 200px"><%= action_name %></button>
-				    </div>	
-	    <% end %>	
-	    
+<% action = !action.blank? ?  action : 'create'%>
+<fieldset> 	
+ 	<legend><h3><%= action.titleize  + " " + legend %></h3></legend>
+    <%= form_for :catagory,:url=>{:action=>action},:method=> type,:html => { :class => "form label-inline uniform"} do |f| %>
+		<div class="field"><label for="">Code </label> <%= f.text_field 'code',  :cols => 20,:class=>"medium",:value=> action != 'update' ? Catagory.generate_code : @catagory.code,:readonly=>true  %></div>
+		<div class="field1"><label for="">Catagory Name </label> <%= f.text_field 'name',  :cols => 20,:class=>"medium"%></div>
+		<br><br><br>
+		<div class="buttonrow">
+			<button class="btn btn-black" style="margin-right: 200px"><%= action_name %></button>
+	    </div>	
+    <% end %>	
+    
+</fieldset>

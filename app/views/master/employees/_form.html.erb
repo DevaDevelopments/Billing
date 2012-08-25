@@ -1,16 +1,20 @@
+<% action = !action.blank? ?  action : 'create'%>
+<fieldset> 	
+ 	<legend><h3><%= action.titleize  + " " + "New Employee" %></h3></legend>
 <%= form_for :employee,:url=>{:action=>action},:method=> type,:html => { :class => "form label-inline uniform"} do |f| %>
-	<div class="field"><label for="">Employee ID </label><%= f.text_field 'employeeid', :read_only => false%> </div>
+	<div class="field"><label for="">Employee ID </label><%= f.text_field 'employeeid', :readonly => false,:value=>Employee.generate_code%> </div>
 	<div class="field"><label for="">Employee Name </label><%= f.text_field 'employee_name'%> </div>
 	<div class="field"><label for="">Desgination </label><%#= f.text_field 'designation'%> </div>
 	<div class="field"><label for="">Mobile Number </label> <%= text_field 'address','mobile_no',:size=>"30",:class=>"medium",:size => "20", :maxlength => 10, :placeholder => 'Enter Phone no ...',:onkeypress => "return integer_only(event)"%></div>
 	<div class="field"><label for="">Telephone Number </label> <%= text_field 'address','telephone_number',:size=>"30",:class=>"medium", :placeholder => 'Enter Telephone no ...'%></div>
-	<div class="field"><label for="">Addrees </label> <%= text_area 'address','address_1', :rows => 5, :cols => 35,:class=>"medium", :placeholder => 'Enter Address Details ...'%></div>
+	<div class="field"><label for="">Addrees </label> <%= text_field 'address','address_1', :class=>"medium", :placeholder => 'Enter Address Details ...'%></div>
 	<div class="field"><label for="">E-Mail ID </label><%= text_field 'address','email',:size=>"30",:class=>"medium", :placeholder => 'Enter Email Id ...'%></div>
 	<div class="field"><label for="">City </label> <%= collection_select 'address','city_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the City"}%></div>
 	<div class="field"><label for="">State </label>	<%= collection_select 'address','state_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
 	<div class="field"><label for="">Country </label><%= collection_select 'address','country_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
-	<div class="field"><label for="">Pincode </label> <%#= text_field 'address','pincode',:size=>"20", :maxlength => 6,:class=>"medium", :placeholder => 'Enter Pincode ...'%></div>
+	<div class="field"><label for="">Pincode </label> <%= text_field 'address','pincode',:size=>"20", :maxlength => 6,:class=>"medium", :placeholder => 'Enter Pincode ...'%></div>
 	<div class="buttonrow">
-		<button class="btn btn-black"><%= action_name %></button>
+		<button class="btn btn-black" style="margin-right: 200px"><%= action_name %></button>
 	</div>	
 <% end %>	
+</fieldset>

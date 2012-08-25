@@ -1,8 +1,12 @@
-<%= form_for :item,:url=>{:action=>action},:method=> type,:html => { :class => "form label-inline uniform"} do |f| %>
-	<div class="field"><label for="">Item Code </label><%= f.text_field 'item_code',:value=>action == 'create' ? Item.generate_code : item.item_code, :readonly => true%> </div>
-	<div class="field"><label for="">Item Name </label><%= f.text_field 'item_name'%> </div>
-	<div class="field"><label for="">Country </label><%= collection_select 'item','catagory_id',{},:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
-	<div class="buttonrow">
-		<button class="btn btn-black"><%= action_name %></button>
-	</div>	
-<% end %>	
+<fieldset>
+	<legend><h3><%= legend %></h3></legend>
+
+	<%= form_for :item,:url=>{:action=>action},:method=> type,:html => { :class => "form label-inline uniform"} do |f| %>
+		<div class="field"><label for="">Item Code </label><%= f.text_field 'item_code', :readonly => true,:value => action == 'create' ? Item.generate_code : item.item_code%> </div>
+		<div class="field"><label for="">Item Category</label><%= collection_select 'item','catagory_id',Catagory.all,:id,:name,{:class=>"medium",:prompt=>"Select the Catagory"}%></div>
+		<div class="field"><label for="">Item Name </label><%= f.text_field 'item_name'%> </div>
+		<div class="buttonrow">
+			<button class="btn btn-black" style="margin-right: 200px"><%= action_name %></button>
+		</div>	
+	<% end %>	
+</fieldset>

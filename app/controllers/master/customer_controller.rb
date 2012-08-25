@@ -9,13 +9,14 @@ class Master::CustomerController < ApplicationController
     @customer = Customer.new(params[:customer])
     if @customer.save
       @customer.address_details.build(params[:address])
-      @customer.save
+      @customer.save && @customer.update_code
        redirect_to(master_customer_index_path)
     end
   end
   
   def edit
     @customer = Customer.find(params[:id])
+    @address = @customer.address_details.last
     @action = 'update'
     render :action=> 'index'
   end
@@ -25,7 +26,7 @@ class Master::CustomerController < ApplicationController
     if @customerr.update_attributes(params[:customer])
       @customerr.address_details.build(params[:address])
       @customerr.save
-      render :action => 'index'
+      redirect_to :action => 'index'
     end
   end
   

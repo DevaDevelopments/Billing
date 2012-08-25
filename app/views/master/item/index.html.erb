@@ -1,6 +1,6 @@
-<h3>Item Master</h3>
 		<div class="grid10">
-			<%= render :partial=>"form",:locals=>{:action=>@action=="update" ? "update" : "create" , :item => @item, :type => @action == 'update' ? 'put' : 'post', :action_name => @action == 'update' ? 'Modify' : 'Add'}%>	
+			<%= render :partial=>"form",:locals=>{:legend=>"Item Master",:action=>@action=="update" ? "update" : "create" , :item => @item, :type => @action == 'update' ? 'put' : 'post', :action_name => @action == 'update' ? 'Modify' : 'Add'}%>	
+		<br /><br><br />
 		</div>
 
 <table class="data display datatable" id="example">
